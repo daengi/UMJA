@@ -6,9 +6,8 @@
 package umja;
 
 /**
- *
  * @author User
  */
 public class Compiler {
-    
+
 }
