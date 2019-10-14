@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="AnchorPane" fx:id="AnchorPane" prefHeight="365.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1"
+            fx:controller="umja.FXMLDocumentController">
+    <children>
+        <TextArea fx:id="ta_Output" editable="false" layoutX="25.0" layoutY="144.0" prefHeight="200.0"
+                  prefWidth="550.0"/>
+        <Label fx:id="label" layoutX="25.0" layoutY="119.0" prefHeight="25.0" prefWidth="153.0" text="Console Output:"
+               textAlignment="CENTER" textOverrun="CLIP">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <Button fx:id="btn_loadUMLFile" layoutX="25.0" layoutY="42.0" mnemonicParsing="false" onAction="#openUMLFile"
+                prefHeight="40.0" prefWidth="203.0" text="Import UML "/>
+        <Button fx:id="btn_Settings" layoutX="443.0" layoutY="14.0" mnemonicParsing="false" onAction="#openSettingsMenu"
+                prefHeight="17.0" prefWidth="132.0" text="Settings"/>
+        <Button fx:id="btn_Convert" layoutX="450.0" layoutY="107.0" mnemonicParsing="false" onAction="#ConvertToJava"
+                prefHeight="25.0" prefWidth="119.0" text="Convert"/>
+    </children>
+</AnchorPane>
