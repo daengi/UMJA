@@ -43,8 +43,11 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         parser = new Parser(this);
+
+        //TODO Remove before deploying
         selectedFile = new File(System.getProperty("user.dir") + "/uml_v2.graphml");
         convertToJava(null);
+        //TODO Remove before deploying
     }
 
     @FXML
