@@ -1,13 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package umja;
 
-/**
- * @author User
- */
+import java.util.List;
+
 public class Compiler {
 
+    private FXMLDocumentController fxmlDocumentController;
+
+    public Compiler(FXMLDocumentController fxmlDocumentController) {
+        this.fxmlDocumentController = fxmlDocumentController;
+    }
+
+    public void compile(String path, List<UMLClazz> umlClazzes) {
+
+    }
 }
