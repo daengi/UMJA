@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package umja;
 
 import javafx.event.ActionEvent;
@@ -15,10 +10,16 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 /**
  * @author Manuel Simon Klaus Severin
@@ -34,6 +35,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button btn_loadUMLFile;
     private Parser parser;
+    private Compiler compiler;
 
     private File selectedFile;
     private String customPath;
@@ -43,6 +45,7 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         parser = new Parser(this);
+        compiler = new Compiler(this);
 
         //TODO Remove before deploying
         selectedFile = new File(System.getProperty("user.dir") + "/uml_v2.graphml");
@@ -54,8 +57,11 @@ public class FXMLDocumentController implements Initializable {
     private void convertToJava(ActionEvent event) {
         if (selectedFile != null) {
             try {
-                parser.parseFile(selectedFile);
-            } catch (Exception e) {
+                List<UMLClazz> umlClazzes = parser.parseFile(selectedFile);
+                log("Classes found: " + umlClazzes.stream().map(UMLClazz::getClazzName).collect(Collectors.joining(", ")));
+                System.out.println(umlClazzes);
+                compiler.compile(selectedFile.getParent(), umlClazzes);
+            } catch (IOException | ParserConfigurationException | SAXException | ParseException e) {
                 log(e.getMessage());
             }
         } else {
