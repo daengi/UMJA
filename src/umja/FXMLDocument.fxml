@@ -17,9 +17,7 @@
         </Label>
         <Button fx:id="btn_loadUMLFile" layoutX="25.0" layoutY="42.0" mnemonicParsing="false" onAction="#openUMLFile"
                 prefHeight="40.0" prefWidth="203.0" text="Import UML "/>
-        <Button fx:id="btn_Settings" layoutX="443.0" layoutY="14.0" mnemonicParsing="false" onAction="#openSettingsMenu"
-                prefHeight="17.0" prefWidth="132.0" text="Settings"/>
-        <Button fx:id="btn_Convert" layoutX="450.0" layoutY="107.0" mnemonicParsing="false" onAction="#ConvertToJava"
+        <Button fx:id="btn_Convert" layoutX="450.0" layoutY="107.0" mnemonicParsing="false" onAction="#convertToJava"
                 prefHeight="25.0" prefWidth="119.0" text="Convert"/>
     </children>
 </AnchorPane>

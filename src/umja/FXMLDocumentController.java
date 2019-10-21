@@ -8,17 +8,16 @@ package umja;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 
-import java.io.*;
+import java.io.File;
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 /**
@@ -34,74 +33,58 @@ public class FXMLDocumentController implements Initializable {
     private TextArea ta_Output;
     @FXML
     private Button btn_loadUMLFile;
-    @FXML
-    private Button btn_Settings;
-
+    private Parser parser;
 
     private File selectedFile;
-    private String customPath = "";
+    private String customPath;
     @FXML
     private Button btn_Convert;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }
-
-    private void readFile() {
-        //ToDo:
+        parser = new Parser(this);
+        selectedFile = new File(System.getProperty("user.dir") + "/uml_v2.graphml");
+        convertToJava(null);
     }
 
     @FXML
-    private void ConvertToJava(ActionEvent event) {
+    private void convertToJava(ActionEvent event) {
+        if (selectedFile != null) {
+            try {
+                parser.parseFile(selectedFile);
+            } catch (Exception e) {
+                log(e.getMessage());
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("File doesn't exist");
+            alert.setContentText("The selected file doesn't exist any more");
+            alert.showAndWait();
+        }
     }
 
     @FXML
     private void openUMLFile(ActionEvent event) {
-        loadPath();
         FileChooser fileChooser = new FileChooser();
-        String userDirectoryString = System.getProperty("user.home");
-        File userDirectory = new File(userDirectoryString);
 
-        if (customPath.equals("")) {
-            if (!userDirectory.canRead())
-                userDirectory = new File("c:/Users/" + System.getProperty("user.name") + "/Documents");
-            fileChooser.setInitialDirectory(userDirectory);
+        if (customPath == null || customPath.equals("")) {
+            fileChooser.setInitialDirectory(new File(System.getProperty("user.dir")));
         } else fileChooser.setInitialDirectory(new File(customPath));
 
 
         fileChooser.setTitle("UML Datei öffnen ...");
         fileChooser.getExtensionFilters().addAll(new ExtensionFilter("graphml", "*.graphml"));
         selectedFile = fileChooser.showOpenDialog(AnchorPane.getScene().getWindow());
-        if (selectedFile != null) readFile();
-    }
-
-    private void loadPath() {
-        BufferedReader reader;
-        try {
-            reader = new BufferedReader(new FileReader("path.csv"));
-            customPath = reader.readLine();
-            reader.close();
-        } catch (IOException ex) {
-            ta_Output.appendText("Could not load the old path");
+        if (selectedFile != null) {
+            customPath = selectedFile.getParent();
+            log("File loaded!");
+        } else {
+            log("File doesn't exist!");
         }
     }
 
-    @FXML
-    private void openSettingsMenu(ActionEvent event) {
-        TextInputDialog dialog = new TextInputDialog(customPath);
-        dialog.setTitle("Settings");
-        dialog.setHeaderText("Settings for Path");
-        dialog.setContentText("Please enter your standard Path:");
-        Optional<String> result = dialog.showAndWait();
-        result.ifPresent(path -> customPath = path);
-        BufferedWriter writer;
-        try {
-            writer = new BufferedWriter(new FileWriter("path.csv", false));
-            writer.write(customPath);
-            writer.close();
-        } catch (IOException ex) {
-            ta_Output.appendText("Could not save the new path.");
-        }
+    public void log(String text) {
+        ta_Output.appendText(text + System.lineSeparator());
     }
+
 }
