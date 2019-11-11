@@ -10,9 +10,9 @@ public class UMLClazz {
     private String inheritsFrom;
     private List<String> interfaces;
     private List<String> properties;
-    private List<String> methods;
+    private List<UMLClazzMethod> methods;
 
-    public UMLClazz(String strPackage, String clazzName, ClassType classType, String inheritsFrom, List<String> interfaces, List<String> properties, List<String> methods) {
+    public UMLClazz(String strPackage, String clazzName, ClassType classType, String inheritsFrom, List<String> interfaces, List<String> properties, List<UMLClazzMethod> methods) {
         this.strPackage = strPackage;
         this.clazzName = clazzName;
         this.classType = classType;
@@ -38,7 +38,7 @@ public class UMLClazz {
         return properties;
     }
 
-    public List<String> getMethods() {
+    public List<UMLClazzMethod> getMethods() {
         return methods;
     }
 

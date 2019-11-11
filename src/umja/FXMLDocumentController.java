@@ -48,7 +48,7 @@ public class FXMLDocumentController implements Initializable {
         compiler = new Compiler(this);
 
         //TODO Remove before deploying
-        selectedFile = new File(System.getProperty("user.dir") + "/uml_v2.graphml");
+        selectedFile = new File(System.getProperty("user.dir") + "/uml_v3.graphml");
         convertToJava(null);
         //TODO Remove before deploying
     }

@@ -11,9 +11,12 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Modifier;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Parser {
     private static final String HTML_REGEX = "<[^>]+>";
@@ -43,7 +46,7 @@ public class Parser {
                     String inheritsFrom = null;//TODO Use that
                     List<String> interfaces = new ArrayList<>();//TODO Use that
                     List<String> properties = new ArrayList<>();
-                    List<String> methods = new ArrayList<>();
+                    List<UMLClazzMethod> methods = new ArrayList<>();
 
                     NodeList nodeLabels = nodeElement.getElementsByTagName("y:NodeLabel");
                     if (nodeLabels.getLength() >= 1) {
@@ -93,7 +96,20 @@ public class Parser {
                                 Element methodLabel = (Element) methodLabels.item(0);
                                 String[] clazzMethods = methodLabel.getTextContent().split("\n");
                                 for (String method : clazzMethods) {
-                                    methods.add(method.trim().replaceAll(HTML_REGEX, ""));
+                                    method = method.trim().replaceAll(HTML_REGEX, "");
+                                    if (!method.isEmpty()) {
+                                        int returnOffset = method.lastIndexOf(") : ");
+                                        UMLClazzMethod umlClazzMethod = new UMLClazzMethod(
+                                                getType(method.substring(0, method.indexOf(" "))),
+                                                returnOffset != -1 ? method.substring(returnOffset + 4) : null,
+                                                method.substring(method.indexOf(" ") + 1, method.indexOf("(")),
+                                                Arrays.stream(method.substring(method.indexOf("(") + 1, method.lastIndexOf(")")).trim().split(", ")).map(s -> {
+                                                    String[] split = s.split(" : ");
+                                                    return split.length >= 2 ? split[1] + " " + split[0] : split.length >= 1 ? split[0] : null;
+                                                }).collect(Collectors.toList())
+                                        );
+                                        methods.add(umlClazzMethod);
+                                    }
                                 }
                             } else {
                                 throw new ParseException("y:MethodLabel not found", doc.getTextContent().indexOf(uml.getTextContent()));
@@ -108,5 +124,17 @@ public class Parser {
         }
         fxmlDocumentController.log("File parsed successfully!");
         return umlClazzes;
+    }
+
+    private int getType(String c) {
+        switch (c) {
+            case "#":
+                return Modifier.PROTECTED;
+            case "-":
+                return Modifier.PRIVATE;
+            case "+":
+            default:
+                return Modifier.PUBLIC;
+        }
     }
 }
