@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c700d331-4a6d-4309-bf23-6a4f5628336a" name="Default Changelist" comment="" />
+    <list default="true" id="c700d331-4a6d-4309-bf23-6a4f5628336a" name="Default Changelist" comment="First compiler code">
+      <change beforePath="$PROJECT_DIR$/.idea/UMJA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UMJA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/umja/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/Compiler.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +41,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Manschki &lt;seifriedsbergerm0123@gmail.com&gt;" />
+        <option value="Manschki" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IgnoredFileRootStore">
@@ -242,9 +252,26 @@
     <MESSAGE value="Improved parsing" />
     <MESSAGE value="Removed unnecessary header" />
     <MESSAGE value="Added library settings hopefully" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added library settings hopefully" />
+    <MESSAGE value="First compiler code" />
+    <option name="LAST_COMMIT_MESSAGE" value="First compiler code" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/umja/Compiler.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/umja/Compiler.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
