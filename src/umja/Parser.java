@@ -66,7 +66,7 @@ public class Parser {
                         if (umls.getLength() >= 1) {
                             Element uml = (Element) umls.item(0);
                             String constraint = uml.getAttribute("constraint");
-                            if (constraint == null) {
+                            if (constraint == null || constraint.isEmpty()) {
                                 String stereotype = uml.getAttribute("stereotype");
                                 switch (stereotype) {
                                     case "enumeration":
@@ -87,7 +87,6 @@ public class Parser {
                                 for (String property : clazzProperties) {
                                     property = property.trim().replaceAll(HTML_REGEX, "");
                                     if (!property.isEmpty()) {
-                                        System.out.println(property);
                                         int returnOffset = property.lastIndexOf(" : ");
                                         int whitespaceOffset = property.indexOf(" ") + 1;
                                         UMLClazzProperty umlClazzProperty = new UMLClazzProperty(
