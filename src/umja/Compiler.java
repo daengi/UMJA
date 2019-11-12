@@ -1,6 +1,5 @@
 package umja;
 
-import java.io.File;
 import java.lang.reflect.Modifier;
 import java.util.List;
 
@@ -13,10 +12,7 @@ public class Compiler {
     }
 
     public void compile(String path, List<UMLClazz> umlClazzes) {
-        for (UMLClazz clazz :
-                umlClazzes) {
-            File file = new File(path);
-
+        for (UMLClazz clazz : umlClazzes) {
 
             //write package
             StringBuilder builder = new StringBuilder();
@@ -28,9 +24,9 @@ public class Compiler {
 
             //write class notation
             builder.append("public ");
-            //builder.append(clazz.getClassType().toString().toLowerCase());
-            //builder.append(clazz.
+            builder.append(clazz.getClassType().toString().toLowerCase());
             builder.append(" ");
+
             builder.append(clazz.getClazzName());
 
             //interfaces and inheritance
@@ -46,20 +42,28 @@ public class Compiler {
 
             builder.append(" {\n");
 
-            //TODO properites
-            //if(!clazz.getProperties().isEmpty()){
-            //    builder.append(String.join(";\n ", clazz.getProperties()));
-            //}
             if (!clazz.getProperties().isEmpty()) {
-
+                for (UMLClazzProperty property : clazz.getProperties()) {
+                    if (clazz.getClassType() == UMLClazz.ClassType.ENUM) {
+                        builder.append(property.getName());
+                    } else {
+                        if (property.getModifier() == Modifier.PUBLIC) {
+                            builder.append("public ");
+                        } else if (property.getModifier() == Modifier.PRIVATE) {
+                            builder.append("private ");
+                        } else if (property.getModifier() == Modifier.PROTECTED) {
+                            builder.append("protected ");
+                        }
+                        builder.append(property.getDataType());
+                        builder.append(" ");
+                        builder.append(property.getName());
+                        builder.append(";\n");
+                    }
+                }
             }
 
-
-            //TODO Constructor and Methods
             if (!clazz.getMethods().isEmpty()) {
-                for (UMLClazzMethod method :
-                        clazz.getMethods()) {
-
+                for (UMLClazzMethod method : clazz.getMethods()) {
                     if (method.getModifier() == Modifier.PUBLIC) {
                         builder.append("public ");
                     } else if (method.getModifier() == Modifier.PRIVATE) {
@@ -85,7 +89,7 @@ public class Compiler {
             //close bracket from class
             builder.append("}");
 
-
+            System.out.println(builder.toString());
         }
     }
 }
