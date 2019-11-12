@@ -45,7 +45,7 @@ public class Parser {
                     UMLClazz.ClassType classType = UMLClazz.ClassType.CLASS;
                     String inheritsFrom = null;//TODO Use that
                     List<String> interfaces = new ArrayList<>();//TODO Use that
-                    List<String> properties = new ArrayList<>();
+                    List<UMLClazzProperty> properties = new ArrayList<>();
                     List<UMLClazzMethod> methods = new ArrayList<>();
 
                     NodeList nodeLabels = nodeElement.getElementsByTagName("y:NodeLabel");
@@ -85,7 +85,18 @@ public class Parser {
                                 Element attributeLabel = (Element) attributeLabels.item(0);
                                 String[] clazzProperties = attributeLabel.getTextContent().split("\n");
                                 for (String property : clazzProperties) {
-                                    properties.add(property.trim().replaceAll(HTML_REGEX, ""));
+                                    property = property.trim().replaceAll(HTML_REGEX, "");
+                                    if (!property.isEmpty()) {
+                                        System.out.println(property);
+                                        int returnOffset = property.lastIndexOf(" : ");
+                                        int whitespaceOffset = property.indexOf(" ") + 1;
+                                        UMLClazzProperty umlClazzProperty = new UMLClazzProperty(
+                                                getAccessModifier(property.substring(0, property.indexOf(" "))),
+                                                returnOffset != -1 ? property.substring(returnOffset + 3) : null,
+                                                returnOffset != -1 ? property.substring(whitespaceOffset, property.indexOf(" ", whitespaceOffset)) : property
+                                        );
+                                        properties.add(umlClazzProperty);
+                                    }
                                 }
                             } else {
                                 throw new ParseException("y:AttributeLabel not found", doc.getTextContent().indexOf(uml.getTextContent()));
@@ -100,7 +111,7 @@ public class Parser {
                                     if (!method.isEmpty()) {
                                         int returnOffset = method.lastIndexOf(") : ");
                                         UMLClazzMethod umlClazzMethod = new UMLClazzMethod(
-                                                getType(method.substring(0, method.indexOf(" "))),
+                                                getAccessModifier(method.substring(0, method.indexOf(" "))),
                                                 returnOffset != -1 ? method.substring(returnOffset + 4) : null,
                                                 method.substring(method.indexOf(" ") + 1, method.indexOf("(")),
                                                 Arrays.stream(method.substring(method.indexOf("(") + 1, method.lastIndexOf(")")).trim().split(", ")).map(s -> {
@@ -126,15 +137,16 @@ public class Parser {
         return umlClazzes;
     }
 
-    private int getType(String c) {
+    private int getAccessModifier(String c) {
         switch (c) {
             case "#":
                 return Modifier.PROTECTED;
             case "-":
                 return Modifier.PRIVATE;
             case "+":
-            default:
                 return Modifier.PUBLIC;
+            default:
+                return -1;
         }
     }
 }
