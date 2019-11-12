@@ -49,8 +49,11 @@ public class Compiler {
             //TODO properites
             //if(!clazz.getProperties().isEmpty()){
             //    builder.append(String.join(";\n ", clazz.getProperties()));
-
             //}
+            if (!clazz.getProperties().isEmpty()) {
+
+            }
+
 
             //TODO Constructor and Methods
             if (!clazz.getMethods().isEmpty()) {
@@ -71,7 +74,7 @@ public class Compiler {
                     builder.append(method.getName());
                     builder.append("(");
                     if (!method.getParameter().isEmpty()) {
-                        builder.append(String.join(", ", clazz.getProperties()));
+                        builder.append(String.join(", ", method.getParameter()));
                     }
                     builder.append(")");
                     builder.append("{\n");
