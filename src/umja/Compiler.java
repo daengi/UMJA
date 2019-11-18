@@ -93,7 +93,7 @@ public class Compiler {
 
                 //close bracket from class
                 builder.append("}");
-
+                System.out.println(builder.toString());
                 try {
                     Files.writeString(file.toPath(), builder.toString());
                 } catch (IOException e) {
