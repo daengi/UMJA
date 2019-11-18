@@ -35,6 +35,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -98,6 +99,12 @@
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="umja.test" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Desktop\Google Drive\Schule\AUD\4. Klasse\UML-Parser\UMJA\src\umja" />
       <recent name="D:\Desktop\Google Drive\Schule\AUD\4. Klasse\UML-Parser\UMJA\src\main\umja" />
@@ -152,7 +159,7 @@
       <workItem from="1572259936399" duration="515000" />
       <workItem from="1572260488777" duration="1675000" />
       <workItem from="1572262894954" duration="46000" />
-      <workItem from="1574074885648" duration="445000" />
+      <workItem from="1574074885648" duration="717000" />
     </task>
     <task id="LOCAL-00001" summary="We beat JavaFx">
       <created>1571048526695</created>
@@ -266,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573556874111</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Generated ParserTest Dummy and added JUunit5">
+      <created>1574075557899</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1574075557899</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +317,8 @@
     <MESSAGE value="Fixed classType parsing" />
     <MESSAGE value="Added File Output" />
     <MESSAGE value="Updated workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated workspace.xml" />
+    <MESSAGE value="Generated ParserTest Dummy and added JUunit5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generated ParserTest Dummy and added JUunit5" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
