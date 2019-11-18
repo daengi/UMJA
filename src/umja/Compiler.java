@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Modifier;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 
 public class Compiler {
@@ -17,7 +18,8 @@ public class Compiler {
     public void compile(String path, List<UMLClazz> umlClazzes) {
         for (UMLClazz clazz : umlClazzes) {
             File file = new File(path + File.separator + clazz.getStrPackage().replace(".", File.separator) + File.separator + clazz.getClazzName() + ".java");
-            if (file.mkdirs()) {
+            try {
+                Files.createDirectories(Path.of(file.getParent()));
 
                 //write package
                 StringBuilder builder = new StringBuilder();
@@ -100,7 +102,8 @@ public class Compiler {
                     fxmlDocumentController.log(e.getClass().getSimpleName() + ": " + e.getMessage());
                     e.printStackTrace();
                 }
-            } else {
+            } catch (IOException e) {
+                e.printStackTrace();
                 fxmlDocumentController.log(clazz.getClazzName() + " failed to create parent dir!");
             }
         }

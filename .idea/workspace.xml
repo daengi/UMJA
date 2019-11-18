@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c700d331-4a6d-4309-bf23-6a4f5628336a" name="Default Changelist" comment="" />
+    <list default="true" id="c700d331-4a6d-4309-bf23-6a4f5628336a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/umja/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/Compiler.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +125,7 @@
   </component>
   <component name="RunManager">
     <configuration name="UMJA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.umja.UMJA" />
+      <option name="MAIN_CLASS_NAME" value="umja.UMJA" />
       <module name="UMJA" />
       <option name="VM_PARAMETERS" value="--module-path &quot;lib\javafx-sdk-13\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
@@ -157,7 +160,7 @@
       <workItem from="1572259936399" duration="515000" />
       <workItem from="1572260488777" duration="1675000" />
       <workItem from="1572262894954" duration="46000" />
-      <workItem from="1574074885648" duration="978000" />
+      <workItem from="1574074885648" duration="2350000" />
     </task>
     <task id="LOCAL-00001" summary="We beat JavaFx">
       <created>1571048526695</created>
@@ -292,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574075742021</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Updated uml_v3.graphml">
+      <created>1574076006614</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1574076006614</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +342,8 @@
     <MESSAGE value="Generated ParserTest Dummy and added JUunit5" />
     <MESSAGE value="Added JUnit5 (again)" />
     <MESSAGE value="Generated CompilerTest Dummy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generated CompilerTest Dummy" />
+    <MESSAGE value="Updated uml_v3.graphml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated uml_v3.graphml" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
