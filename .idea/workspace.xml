@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c700d331-4a6d-4309-bf23-6a4f5628336a" name="Default Changelist" comment="Added File Output">
+    <list default="true" id="c700d331-4a6d-4309-bf23-6a4f5628336a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/umja/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/Compiler.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,14 +78,17 @@
   </component>
   <component name="ProjectId" id="1SBqApTfwtGpOAt4IwVWqmAuTp8" />
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Annotations" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="D:/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -94,6 +96,12 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Desktop\Google Drive\Schule\AUD\4. Klasse\UML-Parser\UMJA\src\umja" />
+      <recent name="D:\Desktop\Google Drive\Schule\AUD\4. Klasse\UML-Parser\UMJA\src\main\umja" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -109,12 +117,12 @@
   </component>
   <component name="RunManager">
     <configuration name="UMJA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="umja.UMJA" />
+      <option name="MAIN_CLASS_NAME" value="main.umja.UMJA" />
       <module name="UMJA" />
       <option name="VM_PARAMETERS" value="--module-path &quot;lib\javafx-sdk-13\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="umja.*" />
+          <option name="PATTERN" value="main.java.umja.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,6 +152,7 @@
       <workItem from="1572259936399" duration="515000" />
       <workItem from="1572260488777" duration="1675000" />
       <workItem from="1572262894954" duration="46000" />
+      <workItem from="1574074885648" duration="445000" />
     </task>
     <task id="LOCAL-00001" summary="We beat JavaFx">
       <created>1571048526695</created>
@@ -243,7 +252,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573556805122</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added File Output">
+      <created>1573556853936</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1573556853936</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Updated workspace.xml">
+      <created>1573556874111</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1573556874111</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +286,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="We beat JavaFx" />
     <MESSAGE value="Added uml_v2.graphml" />
     <MESSAGE value="Removed Settings Button and improved FileChooser Path" />
@@ -277,7 +301,9 @@
     <MESSAGE value="Methods compiling added" />
     <MESSAGE value="Fixed a Compiler Method Compiler error" />
     <MESSAGE value="Fixed classType parsing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed classType parsing" />
+    <MESSAGE value="Added File Output" />
+    <MESSAGE value="Updated workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated workspace.xml" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
