@@ -264,7 +264,7 @@ STRATEGY, SPORT</y:AttributeLabel>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="32.9072265625" x="87.54638671875" xml:space="preserve" y="26.701171875">User<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="-0.03703090122767855" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
               <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="interface" use3DEffect="true">
-                <y:AttributeLabel xml:space="preserve">&lt;html&gt;+ &lt;u&gt;CAPACITY = 2 : intt&lt;/u&gt;&lt;/html&gt;</y:AttributeLabel>
+                <y:AttributeLabel xml:space="preserve">&lt;html&gt;+ &lt;u&gt;CAPACITY = 2 : int&lt;/u&gt;&lt;/html&gt;</y:AttributeLabel>
                 <y:MethodLabel xml:space="preserve">+ getWishlist() : Game[]
 + addToWishlist(game : Game) : void</y:MethodLabel>
               </y:UML>
@@ -361,7 +361,6 @@ STRATEGY, SPORT</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e3" source="n2::n1" target="n1::n1">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -372,7 +371,6 @@ STRATEGY, SPORT</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e4" source="n2::n0" target="n1::n1">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -385,7 +383,6 @@ STRATEGY, SPORT</y:AttributeLabel>
       </data>
     </edge>
     <edge id="e5" source="n2::n2" target="n1::n1">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
