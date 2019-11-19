@@ -59,7 +59,6 @@ public class FXMLDocumentController implements Initializable {
             try {
                 List<UMLClazz> umlClazzes = parser.parseFile(selectedFile);
                 log("Classes found: " + umlClazzes.stream().map(UMLClazz::getClazzName).collect(Collectors.joining(", ")));
-                System.out.println(umlClazzes);
                 compiler.compile(selectedFile.getParent(), umlClazzes);
             } catch (IOException | ParserConfigurationException | SAXException | ParseException e) {
                 log(e.getMessage());

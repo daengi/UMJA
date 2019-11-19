@@ -35,25 +35,25 @@ public class Parser {
         NodeList nodes = doc.getElementsByTagName("node");
         for (int i = 0; i < nodes.getLength(); i++) {
             Node node = nodes.item(i);
+
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element nodeElement = (Element) node;
+                String strPackage = null;
+                NodeList nodeLabels = nodeElement.getElementsByTagName("y:NodeLabel");
+                if (nodeLabels.getLength() >= 1) {
+                    strPackage = nodeLabels.item(0).getTextContent();
+                }
                 if (!nodeElement.getAttribute("id").contains(":")) {
                     NodeList umlClassNodes = nodeElement.getElementsByTagName("y:UMLClassNode");
 
-                    String clazzName = null;
-                    String strPackage = null;
-                    UMLClazz.ClassType classType = UMLClazz.ClassType.CLASS;
-                    String inheritsFrom = null;//TODO Use that
-                    List<String> interfaces = new ArrayList<>();//TODO Use that
-                    List<UMLClazzProperty> properties = new ArrayList<>();
-                    List<UMLClazzMethod> methods = new ArrayList<>();
-
-                    NodeList nodeLabels = nodeElement.getElementsByTagName("y:NodeLabel");
-                    if (nodeLabels.getLength() >= 1) {
-                        strPackage = nodeLabels.item(0).getTextContent();
-                    }
-
                     for (int j = 0; j < umlClassNodes.getLength(); j++) {
+                        String clazzName;
+                        UMLClazz.ClassType classType = UMLClazz.ClassType.CLASS;
+                        String inheritsFrom = null;//TODO Use that
+                        List<String> interfaces = new ArrayList<>();//TODO Use that
+                        List<UMLClazzProperty> properties = new ArrayList<>();
+                        List<UMLClazzMethod> methods = new ArrayList<>();
+
                         Element umlClassElement = (Element) umlClassNodes.item(j);
 
                         nodeLabels = umlClassElement.getElementsByTagName("y:NodeLabel");
