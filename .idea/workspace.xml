@@ -4,9 +4,6 @@
     <list default="true" id="c700d331-4a6d-4309-bf23-6a4f5628336a" name="Default Changelist" comment="Fixed File Creation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/umja/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/umja/FXMLDocument.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/FXMLDocument.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/umja/FXMLDocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/FXMLDocumentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/umja/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/Parser.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
