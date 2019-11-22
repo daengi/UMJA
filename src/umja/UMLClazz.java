@@ -1,6 +1,7 @@
 package umja;
 
 import java.util.List;
+import java.util.Objects;
 
 public class UMLClazz {
 
@@ -65,5 +66,24 @@ public class UMLClazz {
 
     public enum ClassType {
         INTERFACE, ENUM, ABSTRACT, CLASS
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UMLClazz umlClazz = (UMLClazz) o;
+        return Objects.equals(strPackage, umlClazz.strPackage) &&
+                Objects.equals(clazzName, umlClazz.clazzName) &&
+                classType == umlClazz.classType &&
+                Objects.equals(inheritsFrom, umlClazz.inheritsFrom) &&
+                Objects.equals(interfaces, umlClazz.interfaces) &&
+                Objects.equals(properties, umlClazz.properties) &&
+                Objects.equals(methods, umlClazz.methods);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(strPackage, clazzName, classType, inheritsFrom, interfaces, properties, methods);
     }
 }

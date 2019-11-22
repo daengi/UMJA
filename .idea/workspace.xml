@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c700d331-4a6d-4309-bf23-6a4f5628336a" name="Default Changelist" comment="Fixed File Creation">
+    <list default="true" id="c700d331-4a6d-4309-bf23-6a4f5628336a" name="Default Changelist" comment="Did something in the Parsertest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/umja/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/umja/UMLClazz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/UMLClazz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/umja/UMLClazzProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/UMLClazzProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/umja/test/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/test/ParserTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,8 +45,8 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
-        <option value="Severin &lt;39010966+bungeefan@users.noreply.github.com&gt;" />
         <option value="Manschki &lt;seifriedsbergerm0123@gmail.com&gt;" />
+        <option value="Severin &lt;39010966+bungeefan@users.noreply.github.com&gt;" />
         <option value="Manschki" />
       </list>
     </option>
@@ -82,9 +84,9 @@
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="Repository.Attach.Annotations" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="true" />
-    <property name="Repository.Attach.Sources" value="false" />
+    <property name="Repository.Attach.Sources" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="D:/Android/Sdk" />
@@ -311,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574077553395</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Fixed Issues with the format in the Output">
+      <created>1574264738208</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1574264738208</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,9 +362,27 @@
     <MESSAGE value="Generated CompilerTest Dummy" />
     <MESSAGE value="Updated uml_v3.graphml" />
     <MESSAGE value="Fixed File Creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed File Creation" />
+    <MESSAGE value="Fixed Issues with the format in the Output" />
+    <MESSAGE value="Did something in the Parsertest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Did something in the Parsertest" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/umja/FXMLDocumentController.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="umlClazzes.get(0).properties.get(0).dataType" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

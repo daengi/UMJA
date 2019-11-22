@@ -10,6 +10,7 @@ public class UMLClazzProperty {
         this.modifier = modifier;
         this.dataType = dataType;
         this.name = name;
+
     }
 
     /**
