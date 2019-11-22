@@ -20,8 +20,8 @@ class ParserTest {
         File selectedFile = new File(System.getProperty("user.dir") + "/uml_v3.graphml");
         FXMLDocumentController controller = new FXMLDocumentController();
         Parser parser = new Parser(controller);
-        List<UMLClazz> returnedClazzes = new ArrayList<>();
         try {
+            List<UMLClazz> returnedClazzes;
             returnedClazzes = parser.parseFile(selectedFile);
 
             UMLClazz one = new UMLClazz("net.htlgrieskirchen.pos2.plf.retrosteam.main",
