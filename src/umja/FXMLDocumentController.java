@@ -92,7 +92,9 @@ public class FXMLDocumentController implements Initializable {
     }
 
     public void log(String text) {
-        ta_Output.appendText(text + System.lineSeparator());
+        if (ta_Output != null) {
+            ta_Output.appendText(text + System.lineSeparator());
+        }
     }
 
 }

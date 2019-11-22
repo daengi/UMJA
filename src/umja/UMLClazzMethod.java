@@ -1,6 +1,7 @@
 package umja;
 
 import java.util.List;
+import java.util.Objects;
 
 public class UMLClazzMethod {
 
@@ -40,5 +41,21 @@ public class UMLClazzMethod {
                 ", name='" + name + '\'' +
                 ", parameter=" + parameter +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UMLClazzMethod that = (UMLClazzMethod) o;
+        return modifier == that.modifier &&
+                Objects.equals(returnValue, that.returnValue) &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(parameter, that.parameter);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(modifier, returnValue, name, parameter);
     }
 }
