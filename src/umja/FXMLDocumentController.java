@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
@@ -27,30 +26,24 @@ import java.util.stream.Collectors;
 public class FXMLDocumentController implements Initializable {
 
     @FXML
-    private Label label;
-    @FXML
     private AnchorPane AnchorPane;
     @FXML
     private TextArea ta_Output;
     @FXML
     private Button btn_loadUMLFile;
+    @FXML
+    private Button btn_Convert;
+
     private Parser parser;
     private Compiler compiler;
 
     private File selectedFile;
     private String customPath;
-    @FXML
-    private Button btn_Convert;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         parser = new Parser(this);
         compiler = new Compiler(this);
-
-        //TODO Remove before deploying
-        selectedFile = new File(System.getProperty("user.dir") + "/uml_v3.graphml");
-        convertToJava(null);
-        //TODO Remove before deploying
     }
 
     @FXML
@@ -59,7 +52,8 @@ public class FXMLDocumentController implements Initializable {
             try {
                 List<UMLClazz> umlClazzes = parser.parseFile(selectedFile);
                 log("Classes found: " + umlClazzes.stream().map(UMLClazz::getClazzName).collect(Collectors.joining(", ")));
-                compiler.compile(selectedFile.getParent(), umlClazzes);
+                List<File> compiledFiles = compiler.compile(selectedFile.getParent(), umlClazzes);
+                log("Compiled Classes: " + compiledFiles.stream().map(File::getName).collect(Collectors.joining(", ")));
             } catch (IOException | ParserConfigurationException | SAXException | ParseException e) {
                 log(e.getMessage());
             }
@@ -79,10 +73,10 @@ public class FXMLDocumentController implements Initializable {
             fileChooser.setInitialDirectory(new File(System.getProperty("user.dir")));
         } else fileChooser.setInitialDirectory(new File(customPath));
 
-
         fileChooser.setTitle("UML Datei öffnen ...");
         fileChooser.getExtensionFilters().addAll(new ExtensionFilter("graphml", "*.graphml"));
         selectedFile = fileChooser.showOpenDialog(AnchorPane.getScene().getWindow());
+        log("--------------------");
         if (selectedFile != null) {
             customPath = selectedFile.getParent();
             log("File loaded!");
