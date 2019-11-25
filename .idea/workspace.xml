@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c700d331-4a6d-4309-bf23-6a4f5628336a" name="Default Changelist" comment="Did something in the Parsertest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/umja/UMLClazz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/UMLClazz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/umja/UMLClazzProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/UMLClazzProperty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/umja/test/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/test/ParserTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,6 +44,7 @@
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
         <option value="Manschki &lt;seifriedsbergerm0123@gmail.com&gt;" />
+        <option value="koziol@inext.at &lt;koziol@inext.at&gt;" />
         <option value="Severin &lt;39010966+bungeefan@users.noreply.github.com&gt;" />
         <option value="Manschki" />
       </list>
@@ -126,7 +125,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ParserTest">
     <configuration name="UMJA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="umja.UMJA" />
       <module name="UMJA" />
@@ -141,8 +140,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UMJA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="umja.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="umja.test" />
+      <option name="MAIN_CLASS_NAME" value="umja.test.ParserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ParserTest" />
         <item itemvalue="Application.UMJA" />
       </list>
     </recent_temporary>
@@ -320,7 +335,21 @@
       <option name="project" value="LOCAL" />
       <updated>1574264738208</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Parser now checks every UML Item">
+      <created>1574681324746</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1574681324746</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Updated UMLClazz in Tests">
+      <created>1574684132668</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1574684132668</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,7 +393,9 @@
     <MESSAGE value="Fixed File Creation" />
     <MESSAGE value="Fixed Issues with the format in the Output" />
     <MESSAGE value="Did something in the Parsertest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Did something in the Parsertest" />
+    <MESSAGE value="Parser now checks every UML Item" />
+    <MESSAGE value="Updated UMLClazz in Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated UMLClazz in Tests" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -374,14 +405,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/umja/FXMLDocumentController.java</url>
-          <line>59</line>
+          <line>52</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="returnedClazzes" />
+      </configuration>
       <configuration name="Application">
         <watch expression="umlClazzes.get(0).properties.get(0).dataType" />
+        <watch expression="umlClazzes.get(3).interfaces" />
       </configuration>
     </watches-manager>
   </component>

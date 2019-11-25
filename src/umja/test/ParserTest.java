@@ -47,97 +47,100 @@ class ParserTest {
                     "GameType",
                     UMLClazz.ClassType.ENUM,
                     null,
-                    new ArrayList<String>(),
-                    new ArrayList<UMLClazzProperty>(Arrays.asList(
+                    new ArrayList<>(),
+                    new ArrayList<>(Arrays.asList(
                             new UMLClazzProperty(-1, null, "ACTION, ROLEPLAY,"),
                             new UMLClazzProperty(-1, null, "STRATEGY, SPORT"))),
-                    new ArrayList<UMLClazzMethod>()
+                    new ArrayList<>()
             );
 
-//            UMLClazz three = new UMLClazz("net.htlgrieskirchen.pos2.plf.retrosteam.store",
-//                    "Game",
-//                    UMLClazz.ClassType.CLASS,
-//                    null,
-//                    new ArrayList<>(),
-//                    new ArrayList<>(Arrays.asList(
-//                            new UMLClazzProperty(2, "String", "name"),
-//                            new UMLClazzProperty(2, "String", "price"),
-//                            new UMLClazzProperty(2, "String", "published"),
-//                            new UMLClazzProperty(2, "GameType", "type"))),
-//                    new ArrayList<>(Arrays.asList(
-//                            new UMLClazzMethod(1, null, "Game", new ArrayList<>()),
-//
-//                            new UMLClazzMethod(1, "void", "setName", new ArrayList<>(Arrays.asList("String name"))),
-//                            new UMLClazzMethod(1, "void", "setPrice", new ArrayList<>(Arrays.asList("String price"))),
-//                            new UMLClazzMethod(1, "void", "setPublished", new ArrayList<>(Arrays.asList("String published"))),
-//                            new UMLClazzMethod(1, "void", "setType", new ArrayList<>(Arrays.asList("GameType type"))),
-//                            new UMLClazzMethod(1, "String", "toString", new ArrayList<>())
-//                    )
-//                    ));
-//
-//            UMLClazz four = new UMLClazz("net.htlgrieskirchen.pos2.plf.retrosteam.store",
-//                    "Store",
-//                    UMLClazz.ClassType.CLASS,
-//                    null,
-//                    new ArrayList<String>(),
-//                    new ArrayList<UMLClazzProperty>(Arrays.asList(
-//                            new UMLClazzProperty(2, "Game[]", "games"))),
-//                    new ArrayList<UMLClazzMethod>(Arrays.asList(
-//                            new UMLClazzMethod(1, null, "Store", new ArrayList()),
-//                            new UMLClazzMethod(1, "Game[]", "getGames", new ArrayList()),
-//                            new UMLClazzMethod(1, "void", "addGameToUserWishlist",
-//                                    new ArrayList<>(Arrays.asList("User user", "String gameName"))),
-//                            new UMLClazzMethod(1, "void", "addGameToUserLibrary",
-//                                    new ArrayList<String>(Arrays.asList("User user", "String gameName"))
-//                            )
-//                    )
-//                    ));
-//
-//            UMLClazz five = new UMLClazz("net.htlgrieskirchen.pos2.plf.retrosteam.user",
-//                    "Customer",
-//                    UMLClazz.ClassType.CLASS,
-//                    null,
-//                    new ArrayList<String>(),
-//                    new ArrayList<UMLClazzProperty>(Arrays.asList(
-//                            new UMLClazzProperty(2, "String", "name"),
-//                            new UMLClazzProperty(2, "Game[]", "library"),
-//                            new UMLClazzProperty(2, "Game[]", "wishlist"))),
-//                    new ArrayList<UMLClazzMethod>(Arrays.asList(
-//                            new UMLClazzMethod(1, null, "Customer", new ArrayList<>(Arrays.asList("String name"))),
-//
-//                            new UMLClazzMethod(1, "Game[]", "getLibrary", new ArrayList()),
-//                            new UMLClazzMethod(1, "void", "addToLibrary", new ArrayList<>(Arrays.asList("Game game"))),
-//                            new UMLClazzMethod(1, "String", "toString", new ArrayList())
-//
-//                    )
-//                    ));
-//            UMLClazz six = new UMLClazz("net.htlgrieskirchen.pos2.plf.retrosteam.user",
-//                    "User",
-//                    UMLClazz.ClassType.CLASS,
-//                    null,
-//                    new ArrayList<String>(),
-//                    new ArrayList<UMLClazzProperty>(Arrays.asList(
-//                            new UMLClazzProperty(1, "int", "CAPACITY"))),
-//                    new ArrayList<UMLClazzMethod>(Arrays.asList(
-//                            new UMLClazzMethod(1, "", "Customer", new ArrayList<>(Arrays.asList("String name"))),
-//
-//                            new UMLClazzMethod(1, "Game[]", "getWishlist", new ArrayList()),
-//                            new UMLClazzMethod(1, "void", "addToWishlist", new ArrayList<>(Arrays.asList("Game game")))
-//
-//                    )
-//                    ));
-//            UMLClazz seven = new UMLClazz("net.htlgrieskirchen.pos2.plf.retrosteam.user",
-//                    "Visitor",
-//                    UMLClazz.ClassType.CLASS,
-//                    null,
-//                    new ArrayList<String>(),
-//                    new ArrayList<UMLClazzProperty>(Arrays.asList(
-//                            new UMLClazzProperty(2, "Game[]", "wishlist"))),
-//                    new ArrayList<UMLClazzMethod>(Arrays.asList(
-//                            new UMLClazzMethod(1, null, "Visitor", new ArrayList()),
-//                            new UMLClazzMethod(1, "String", "toString", new ArrayList())
-//                    )
-//                    ));
+            UMLClazz three = new UMLClazz("n1::n1",
+                    "net.htlgrieskirchen.pos2.plf.retrosteam.store",
+                    "Game",
+                    UMLClazz.ClassType.CLASS,
+                    null,
+                    new ArrayList<>(),
+                    new ArrayList<>(Arrays.asList(
+                            new UMLClazzProperty(2, "String", "name"),
+                            new UMLClazzProperty(2, "String", "price"),
+                            new UMLClazzProperty(2, "String", "published"),
+                            new UMLClazzProperty(2, "GameType", "type"))),
+                    new ArrayList<>(Arrays.asList(
+                            new UMLClazzMethod(1, null, "Game", Collections.singletonList("")),
+                            new UMLClazzMethod(1, "void", "setName", Collections.singletonList("String name")),
+                            new UMLClazzMethod(1, "void", "setPrice", Collections.singletonList("String price")),
+                            new UMLClazzMethod(1, "void", "setPublished", Collections.singletonList("String published")),
+                            new UMLClazzMethod(1, "void", "setType", Collections.singletonList("GameType type")),
+                            new UMLClazzMethod(1, "String", "toString", Collections.singletonList("")))
+                    )
+            );
+
+            UMLClazz four = new UMLClazz("n1::n2",
+                    "net.htlgrieskirchen.pos2.plf.retrosteam.store",
+                    "Store",
+                    UMLClazz.ClassType.CLASS,
+                    null,
+                    new ArrayList<>(),
+                    Collections.singletonList(
+                            new UMLClazzProperty(2, "Game[]", "games")),
+                    new ArrayList<>(Arrays.asList(
+                            new UMLClazzMethod(1, null, "Store", Collections.singletonList("")),
+                            new UMLClazzMethod(1, "Game[]", "getGames", Collections.singletonList("")),
+                            new UMLClazzMethod(1, "void", "addGameToUserWishlist",
+                                    new ArrayList<>(Arrays.asList("User user", "String gameName"))),
+                            new UMLClazzMethod(1, "void", "addGameToUserLibrary",
+                                    new ArrayList<>(Arrays.asList("User user", "String gameName"))
+                            )
+                    )
+                    ));
+
+            UMLClazz five = new UMLClazz("n2::n0",
+                    "net.htlgrieskirchen.pos2.plf.retrosteam.user",
+                    "Customer",
+                    UMLClazz.ClassType.CLASS,
+                    null,
+                    Collections.singletonList("n2::n1"),
+                    new ArrayList<>(Arrays.asList(
+                            new UMLClazzProperty(2, "String", "name"),
+                            new UMLClazzProperty(2, "Game[]", "library"),
+                            new UMLClazzProperty(2, "Game[]", "wishlist"))),
+                    new ArrayList<>(Arrays.asList(
+                            new UMLClazzMethod(1, null, "Customer", Collections.singletonList("String name")),
+                            new UMLClazzMethod(1, "Game[]", "getLibrary", Collections.singletonList("")),
+                            new UMLClazzMethod(1, "void", "addToLibrary", Collections.singletonList("Game game")),
+                            new UMLClazzMethod(1, "String", "toString", Collections.singletonList("")))
+
+                    )
+            );
+
+            UMLClazz six = new UMLClazz("n2::n1",
+                    "net.htlgrieskirchen.pos2.plf.retrosteam.user",
+                    "User",
+                    UMLClazz.ClassType.INTERFACE,
+                    null,
+                    new ArrayList<>(),
+                    Collections.singletonList(
+                            new UMLClazzProperty(1, "int", "CAPACITY")),
+                    new ArrayList<>(Arrays.asList(
+                            new UMLClazzMethod(1, "Game[]", "getWishlist", Collections.singletonList("")),
+                            new UMLClazzMethod(1, "void", "addToWishlist", Collections.singletonList("Game game"))
+                    )
+                    ));
+
+
+            UMLClazz seven = new UMLClazz("n2::n2",
+                    "net.htlgrieskirchen.pos2.plf.retrosteam.user",
+                    "Visitor",
+                    UMLClazz.ClassType.CLASS,
+                    null,
+                    Collections.singletonList("n2::n1"),
+                    Collections.singletonList(
+                            new UMLClazzProperty(2, "Game[]", "wishlist")),
+                    new ArrayList<>(Arrays.asList(
+                            new UMLClazzMethod(1, null, "Visitor", Collections.singletonList("")),
+                            new UMLClazzMethod(1, "String", "toString", Collections.singletonList("")))
+                    )
+            );
 
 //            List<UMLClazz> expectedClazzes = new ArrayList<>();
 //            expectedClazzes.add(one);
@@ -151,11 +154,11 @@ class ParserTest {
 
             assert returnedClazzes.contains(one);
             assert returnedClazzes.contains(two);
-            //   assert returnedClazzes.contains(three);
-            //   assert returnedClazzes.contains(four);
-            //assert returnedClazzes.contains(five);
-            // assert returnedClazzes.contains(six);
-            // assert returnedClazzes.contains(seven);
+            assert returnedClazzes.contains(three);
+            assert returnedClazzes.contains(four);
+            assert returnedClazzes.contains(five);
+            assert returnedClazzes.contains(six);
+            assert returnedClazzes.contains(seven);
 //            Assertions.assertArrayEquals(expectedClazzes.toArray(), returnedClazzes.toArray());
 //        Assertions.assertArrayEquals(shouldBe.toArray(), returnedClazzes.toArray());
         } catch (ParseException | ParserConfigurationException | IOException | SAXException e) {
