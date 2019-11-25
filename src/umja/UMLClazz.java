@@ -15,6 +15,7 @@ public class UMLClazz {
     private List<UMLClazzMethod> methods;
 
     public UMLClazz(String id, String strPackage, String clazzName, ClassType classType, String inheritsFrom, List<String> interfaces, List<UMLClazzProperty> properties, List<UMLClazzMethod> methods) {
+        this.id = id;
         this.strPackage = strPackage;
         this.clazzName = clazzName;
         this.classType = classType;
