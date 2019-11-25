@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Compiler {
 
@@ -46,8 +47,7 @@ public class Compiler {
                 }
                 if (!clazz.getInterfaces().isEmpty()) {
                     builder.append(" implements ")
-                            .append(String.join(", ", clazz.getInterfaces()))
-                            .append(" ");
+                            .append(String.join(", ", clazz.getInterfaces().stream().map(s -> umlClazzes.stream().filter(umlClazz -> umlClazz.getId().equals(s)).findAny().get().getClazzName()).collect(Collectors.toList())));
                 }
 
                 builder.append(" {\n");

@@ -43,18 +43,34 @@ public class Parser {
                 if (nodeLabels.getLength() >= 1) {
                     strPackage = nodeLabels.item(0).getTextContent();
                 }
-                if (!nodeElement.getAttribute("id").contains(":")) {
-                    NodeList umlClassNodes = nodeElement.getElementsByTagName("y:UMLClassNode");
+                String id = nodeElement.getAttribute("id");
+                if (id.contains(":")) {
 
-                    for (int j = 0; j < umlClassNodes.getLength(); j++) {
+                    NodeList umlClassNodes = nodeElement.getElementsByTagName("y:UMLClassNode");
+                    if (umlClassNodes.getLength() > 0) {
+
                         String clazzName;
                         UMLClazz.ClassType classType = UMLClazz.ClassType.CLASS;
                         String inheritsFrom = null;//TODO Use that
-                        List<String> interfaces = new ArrayList<>();//TODO Use that
+                        List<String> interfaces = new ArrayList<>();
                         List<UMLClazzProperty> properties = new ArrayList<>();
                         List<UMLClazzMethod> methods = new ArrayList<>();
 
-                        Element umlClassElement = (Element) umlClassNodes.item(j);
+                        NodeList edges = doc.getElementsByTagName("edge");
+                        for (int j = 0; j < edges.getLength(); j++) {
+                            Element edge = (Element) edges.item(j);
+                            if (edge.getAttribute("source").equals(id)) {
+                                Element lineStyle = (Element) edge.getElementsByTagName("y:LineStyle").item(0);
+                                if (lineStyle.getAttribute("type").equals("dashed")) {
+                                    Element arrows = (Element) edge.getElementsByTagName("y:Arrows").item(0);
+                                    if (arrows.getAttribute("target").equals("white_delta")) {
+                                        interfaces.add(edge.getAttribute("target"));
+                                    }
+                                }
+                            }
+                        }
+
+                        Element umlClassElement = (Element) umlClassNodes.item(0);
 
                         nodeLabels = umlClassElement.getElementsByTagName("y:NodeLabel");
                         if (nodeLabels.getLength() >= 1) {
@@ -127,7 +143,7 @@ public class Parser {
                         } else {
                             throw new ParseException("y:UML not found", doc.getTextContent().indexOf(umlClassElement.getTextContent()));
                         }
-                        umlClazzes.add(new UMLClazz(strPackage, clazzName, classType, inheritsFrom, interfaces, properties, methods));
+                        umlClazzes.add(new UMLClazz(id, strPackage, clazzName, classType, inheritsFrom, interfaces, properties, methods));
                     }
                 }
             }
