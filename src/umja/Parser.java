@@ -33,21 +33,22 @@ public class Parser {
 
         List<UMLClazz> umlClazzes = new ArrayList<>();
         NodeList nodes = doc.getElementsByTagName("node");
+        String strPackage = null;
         for (int i = 0; i < nodes.getLength(); i++) {
             Node node = nodes.item(i);
 
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element nodeElement = (Element) node;
-                String strPackage = null;
+                String id = nodeElement.getAttribute("id");
                 NodeList nodeLabels = nodeElement.getElementsByTagName("y:NodeLabel");
-                if (nodeLabels.getLength() >= 1) {
+                if (nodeLabels.getLength() >= 1 && !id.contains(":")) {
                     strPackage = nodeLabels.item(0).getTextContent();
                 }
-                String id = nodeElement.getAttribute("id");
                 if (id.contains(":")) {
 
                     NodeList umlClassNodes = nodeElement.getElementsByTagName("y:UMLClassNode");
-                    if (umlClassNodes.getLength() > 0) {
+
+                    for (int j = 0; j < umlClassNodes.getLength(); j++) {
 
                         String clazzName;
                         UMLClazz.ClassType classType = UMLClazz.ClassType.CLASS;
@@ -57,8 +58,8 @@ public class Parser {
                         List<UMLClazzMethod> methods = new ArrayList<>();
 
                         NodeList edges = doc.getElementsByTagName("edge");
-                        for (int j = 0; j < edges.getLength(); j++) {
-                            Element edge = (Element) edges.item(j);
+                        for (int k = 0; k < edges.getLength(); k++) {
+                            Element edge = (Element) edges.item(k);
                             if (edge.getAttribute("source").equals(id)) {
                                 Element lineStyle = (Element) edge.getElementsByTagName("y:LineStyle").item(0);
                                 if (lineStyle.getAttribute("type").equals("dashed")) {
@@ -70,7 +71,7 @@ public class Parser {
                             }
                         }
 
-                        Element umlClassElement = (Element) umlClassNodes.item(0);
+                        Element umlClassElement = (Element) umlClassNodes.item(j);
 
                         nodeLabels = umlClassElement.getElementsByTagName("y:NodeLabel");
                         if (nodeLabels.getLength() >= 1) {

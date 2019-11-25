@@ -19,6 +19,7 @@ public class Compiler {
 
     public List<File> compile(String path, List<UMLClazz> umlClazzes) {
         String oneTab = "    ";
+        path += File.separator + "output";
         List<File> compiledFiles = new ArrayList<>();
         for (UMLClazz clazz : umlClazzes) {
             File file = new File(path + File.separator + clazz.getStrPackage().replace(".", File.separator) + File.separator + clazz.getClazzName() + ".java");
