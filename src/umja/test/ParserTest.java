@@ -151,7 +151,6 @@ class ParserTest {
 //            expectedClazzes.add(six);
 //            expectedClazzes.add(seven);
 
-
             assert returnedClazzes.contains(one);
             assert returnedClazzes.contains(two);
             assert returnedClazzes.contains(three);
