@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c700d331-4a6d-4309-bf23-6a4f5628336a" name="Default Changelist" comment="Did something in the Parsertest">
+    <list default="true" id="c700d331-4a6d-4309-bf23-6a4f5628336a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/umja/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/umja/UMLClazz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/UMLClazz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/umja/test/CompilerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/test/CompilerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/umja/test/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/test/ParserTest.java" afterDir="false" />
     </list>
@@ -46,9 +44,9 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Severin &lt;39010966+bungeefan@users.noreply.github.com&gt;" />
         <option value="Manschki &lt;seifriedsbergerm0123@gmail.com&gt;" />
         <option value="koziol@inext.at &lt;koziol@inext.at&gt;" />
-        <option value="Severin &lt;39010966+bungeefan@users.noreply.github.com&gt;" />
         <option value="Manschki" />
       </list>
     </option>
@@ -383,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574684132668</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Renamed UMLClazz#getStrPackage&#10;Improved Compiler and Parser Test">
+      <created>1574705426101</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1574705426102</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +409,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="We beat JavaFx" />
     <MESSAGE value="Added uml_v2.graphml" />
     <MESSAGE value="Removed Settings Button and improved FileChooser Path" />
     <MESSAGE value="Added Title" />
@@ -429,7 +433,8 @@
     <MESSAGE value="Did something in the Parsertest" />
     <MESSAGE value="Parser now checks every UML Item" />
     <MESSAGE value="Updated UMLClazz in Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated UMLClazz in Tests" />
+    <MESSAGE value="Renamed UMLClazz#getStrPackage&#10;Improved Compiler and Parser Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed UMLClazz#getStrPackage&#10;Improved Compiler and Parser Test" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

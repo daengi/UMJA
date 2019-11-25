@@ -117,7 +117,6 @@ class ParserTest {
                 )
         ));
 
-
         expectedClazzes.add(new UMLClazz("n2::n2",
                 "net.htlgrieskirchen.pos2.plf.retrosteam.user",
                 "Visitor",
@@ -139,7 +138,6 @@ class ParserTest {
         File selectedFile = new File(System.getProperty("user.dir") + "/uml_v3.graphml");
         FXMLDocumentController controller = new FXMLDocumentController();
         Parser parser = new Parser(controller);
-
         try {
             List<UMLClazz> expectedClazzes = getUmlClazzes();
 

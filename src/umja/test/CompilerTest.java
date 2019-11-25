@@ -151,11 +151,11 @@ class CompilerTest {
         FXMLDocumentController controller = new FXMLDocumentController();
         Compiler compiler = new Compiler(controller);
 
-        List<UMLClazz> expectedClazzes = ParserTest.getUmlClazzes();
+        List<UMLClazz> sourceClazzes = ParserTest.getUmlClazzes();
 
-        List<String> list = Arrays.asList(SOURCES);
+        List<String> expectedClazzes = Arrays.asList(SOURCES);
 
-        List<File> compiledFiles = compiler.compile(System.getProperty("user.dir") + File.separator + "test", expectedClazzes);
+        List<File> compiledFiles = compiler.compile(System.getProperty("user.dir") + File.separator + "test", sourceClazzes);
         assert compiledFiles.stream().map(file -> {
             try {
                 return Files.readString(file.toPath());
@@ -163,6 +163,6 @@ class CompilerTest {
                 e.printStackTrace();
             }
             return "";
-        }).allMatch(list::contains);
+        }).allMatch(expectedClazzes::contains);
     }
 }
