@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class UMLClazz {
 
+    private String id;
     private String strPackage;
     private String clazzName;
     private ClassType classType;
@@ -13,7 +14,7 @@ public class UMLClazz {
     private List<UMLClazzProperty> properties;
     private List<UMLClazzMethod> methods;
 
-    public UMLClazz(String strPackage, String clazzName, ClassType classType, String inheritsFrom, List<String> interfaces, List<UMLClazzProperty> properties, List<UMLClazzMethod> methods) {
+    public UMLClazz(String id, String strPackage, String clazzName, ClassType classType, String inheritsFrom, List<String> interfaces, List<UMLClazzProperty> properties, List<UMLClazzMethod> methods) {
         this.strPackage = strPackage;
         this.clazzName = clazzName;
         this.classType = classType;
@@ -21,6 +22,14 @@ public class UMLClazz {
         this.interfaces = interfaces;
         this.properties = properties;
         this.methods = methods;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getStrPackage() {
@@ -54,6 +63,7 @@ public class UMLClazz {
     @Override
     public String toString() {
         return "UMLClazz{" +
+                "id='" + id + '\'' +
                 "strPackage='" + strPackage + '\'' +
                 ", clazzName='" + clazzName + '\'' +
                 ", classType=" + classType +
@@ -64,16 +74,13 @@ public class UMLClazz {
                 '}';
     }
 
-    public enum ClassType {
-        INTERFACE, ENUM, ABSTRACT, CLASS
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UMLClazz umlClazz = (UMLClazz) o;
-        return Objects.equals(strPackage, umlClazz.strPackage) &&
+        return Objects.equals(id, umlClazz.id) &&
+                Objects.equals(strPackage, umlClazz.strPackage) &&
                 Objects.equals(clazzName, umlClazz.clazzName) &&
                 classType == umlClazz.classType &&
                 Objects.equals(inheritsFrom, umlClazz.inheritsFrom) &&
@@ -84,6 +91,10 @@ public class UMLClazz {
 
     @Override
     public int hashCode() {
-        return Objects.hash(strPackage, clazzName, classType, inheritsFrom, interfaces, properties, methods);
+        return Objects.hash(id, strPackage, clazzName, classType, inheritsFrom, interfaces, properties, methods);
+    }
+
+    public enum ClassType {
+        INTERFACE, ENUM, ABSTRACT, CLASS
     }
 }
