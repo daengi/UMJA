@@ -33,7 +33,8 @@ class CompilerTest {
         Compiler compiler = new Compiler(controller);
 
         List<UMLClazz> clazzes = new ArrayList<>();
-        clazzes.add(new UMLClazz("net.htlgrieskirchen.pos2.plf.retrosteam.main",
+        clazzes.add(new UMLClazz("n0::n0",
+                "net.htlgrieskirchen.pos2.plf.retrosteam.main",
                 "Main",
                 UMLClazz.ClassType.CLASS,
                 null,
