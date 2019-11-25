@@ -33,7 +33,7 @@ public class UMLClazz {
         this.id = id;
     }
 
-    public String getStrPackage() {
+    public String getPackage() {
         return strPackage;
     }
 

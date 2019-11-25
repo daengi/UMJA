@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c700d331-4a6d-4309-bf23-6a4f5628336a" name="Default Changelist" comment="Did something in the Parsertest">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/umja/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/umja/UMLClazz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/UMLClazz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/umja/test/CompilerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/test/CompilerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/umja/test/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/umja/test/ParserTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,7 +102,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.excludes" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -125,7 +128,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ParserTest">
+  <component name="RunManager" selected="JUnit.umja.test in UMJA">
     <configuration name="UMJA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="umja.UMJA" />
       <module name="UMJA" />
@@ -136,6 +139,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompilerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UMJA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="umja.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="umja.test" />
+      <option name="MAIN_CLASS_NAME" value="umja.test.CompilerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,8 +173,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="umja.test in UMJA" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UMJA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="umja.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="umja.test" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.umja.test in UMJA" />
+        <item itemvalue="JUnit.CompilerTest" />
         <item itemvalue="JUnit.ParserTest" />
         <item itemvalue="Application.UMJA" />
       </list>

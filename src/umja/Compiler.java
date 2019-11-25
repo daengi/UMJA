@@ -22,14 +22,14 @@ public class Compiler {
         path += File.separator + "output";
         List<File> compiledFiles = new ArrayList<>();
         for (UMLClazz clazz : umlClazzes) {
-            File file = new File(path + File.separator + clazz.getStrPackage().replace(".", File.separator) + File.separator + clazz.getClazzName() + ".java");
+            File file = new File(path + File.separator + clazz.getPackage().replace(".", File.separator) + File.separator + clazz.getClazzName() + ".java");
             try {
                 Files.createDirectories(Path.of(file.getParent()));
 
                 //write package
                 StringBuilder builder = new StringBuilder();
                 builder.append("package ");
-                builder.append(clazz.getStrPackage());
+                builder.append(clazz.getPackage());
                 builder.append(";\n\n");
 
                 //TODO Imports???????
@@ -48,7 +48,7 @@ public class Compiler {
                 }
                 if (!clazz.getInterfaces().isEmpty()) {
                     builder.append(" implements ")
-                            .append(String.join(", ", clazz.getInterfaces().stream().map(s -> umlClazzes.stream().filter(umlClazz -> umlClazz.getId().equals(s)).findAny().get().getClazzName()).collect(Collectors.toList())));
+                            .append(String.join(", ", clazz.getInterfaces().stream().map(strInterface -> umlClazzes.stream().filter(umlClazz -> umlClazz.getId().equals(strInterface)).findAny().get().getClazzName()).collect(Collectors.toList())));
                 }
 
                 builder.append(" {\n");
