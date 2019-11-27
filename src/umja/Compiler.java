@@ -32,8 +32,6 @@ public class Compiler {
                 builder.append(clazz.getPackage());
                 builder.append(";\n\n");
 
-                //TODO Imports???????
-
                 //write class notation
                 builder.append("public ");
                 builder.append(clazz.getClassType().toString().toLowerCase());
@@ -48,7 +46,13 @@ public class Compiler {
                 }
                 if (!clazz.getInterfaces().isEmpty()) {
                     builder.append(" implements ")
-                            .append(String.join(", ", clazz.getInterfaces().stream().map(strInterface -> umlClazzes.stream().filter(umlClazz -> umlClazz.getId().equals(strInterface)).findAny().get().getClazzName()).collect(Collectors.toList())));
+                            .append(clazz.getInterfaces().stream()
+                                            .map(strInterface -> umlClazzes.stream()
+                                                    .filter(umlClazz -> umlClazz.getId().equals(strInterface))
+                                                    .findAny().get().getClazzName())
+                                            .collect(Collectors.joining(", "))
+                                    //Find associating class
+                            );
                 }
 
                 builder.append(" {\n");
